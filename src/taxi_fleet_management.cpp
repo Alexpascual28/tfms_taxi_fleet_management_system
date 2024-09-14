@@ -5,8 +5,8 @@
 
 TaxiFleetManagement::TaxiFleetManagement(int num_taxis) {
     for (int i = 0; i < num_taxis; ++i) {
-        int x = rand() % 100;
-        int y = rand() % 100;
+        int x = rand() % 10;
+        int y = rand() % 10;
         fleet.emplace_back(i, x, y); // Initialize with random locations
 
         std::cout << "Taxi " << i <<  " spawned at (" << x << "," << y << ")" << std::endl;
