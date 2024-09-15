@@ -25,6 +25,7 @@ int main() {
         switch (currentstate)
         {
             case START:
+            {
                 std::cout << "\n##### TAXI FLEET MANAGEMENT SYSTEM #####\n" << std::endl;
                 std::cout << "Press any key to create a fleet of taxis...\n" << std::endl;
                 std::cout << "Or press 'q' to quit the program: \n" << std::endl;
@@ -38,8 +39,10 @@ int main() {
                     currentstate = CREATE_FLEET;
                 }
                 break;
+            }
 
             case CREATE_FLEET:
+            {
                 std::cout << "Enter the number of taxis in the fleet: " << std::endl;
                 int num_taxis;
                 std::cin >> num_taxis;
@@ -50,7 +53,7 @@ int main() {
                 std::cout << "Press 'R' to request a taxi for a customer..." << std::endl;
                 std::cout << "Or press 'q' to quit the program: " << std::endl;
 
-                // char input;
+                char input;
                 std::cin >> input;
 
                 if (input == 'R' || input == 'r') {
@@ -59,8 +62,10 @@ int main() {
                     currentstate = END;
                 }
                 break;
-            
+            }
+                
             case REQUEST_TAXI:
+            {
                 std::cout << "Enter the x-coordinate of the customer's location: " << std::endl;
                 int customer_x;
                 std::cin >> customer_x;
@@ -79,8 +84,10 @@ int main() {
 
                 currentstate = MAIN_MENU;
                 break;
+            }
 
             case MAIN_MENU:
+            {
                 std::cout << "Press 'R' to request another taxi..." << std::endl;
                 std::cout << "Press 'C' to cancel a taxi request..." << std::endl;
                 std::cout << "Press 'W' to get the wait time for a taxi..." << std::endl;
@@ -105,8 +112,10 @@ int main() {
                     currentstate = END;
                 }
                 break;
-
+            }
+                
             case CANCEL_TAXI:
+            {
                 std::cout << "Enter the x-coordinate of the customer's location to cancel the taxi request: " << std::endl;
                 int cancel_x;
                 std::cin >> cancel_x;
@@ -125,8 +134,10 @@ int main() {
 
                 currentstate = MAIN_MENU;
                 break;
-
+            }
+                
             case GET_WAIT_TIME:
+            {
                 std::cout << "Enter the taxi ID to get the wait time: " << std::endl;
                 int taxi_id;
                 std::cin >> taxi_id;
@@ -141,14 +152,18 @@ int main() {
 
                 currentstate = MAIN_MENU;
                 break;
-
+            }
+                
             case GET_AVERAGE_WAIT_TIME:
+            {
                 std::cout << "Average wait time for all taxis: " << fleetManager.getAverageWaitTime() << " minutes\n" << std::endl;
 
                 currentstate = MAIN_MENU;
                 break;
-
+            }
+                
             case DROP_OFF:
+            {
                 std::cout << "Enter the taxi ID to drop off the customer: " << std::endl;
                 int dropoff_id;
                 std::cin >> dropoff_id;
@@ -167,12 +182,15 @@ int main() {
 
                 currentstate = MAIN_MENU;
                 break;
-
+            }
+                
             case END:
+            {
                 std::cout << "Exiting the program...\n" << std::endl;
                 exitLoop = true;
                 break;
-
+            }
+                
             default:
                 break;
         }
