@@ -11,7 +11,11 @@ public:
     
     // Optional features
     bool cancelRequest(int customer_x, int customer_y);
+    double getTaxiWaitTime(int taxi_id);
     double getAverageWaitTime() const;
+
+    std::vector<Taxi> getFleet() const;
+    void setFleet(std::vector<Taxi> new_fleet);
 
 private:
     std::vector<Taxi> fleet;
