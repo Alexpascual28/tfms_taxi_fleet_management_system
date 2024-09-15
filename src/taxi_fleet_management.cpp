@@ -19,6 +19,26 @@ TaxiFleetManagement::TaxiFleetManagement(int num_taxis) {
 }
 
 /**
+ * @brief Empty constructor to initialize the taxi fleet with no taxis.
+ */
+TaxiFleetManagement::TaxiFleetManagement() { }
+
+/**
+ * @brief Creates a fleet of taxis with the specified number of taxis.
+ * 
+ * @param num_taxis The number of taxis in the fleet.
+ */
+void TaxiFleetManagement::createFleet(int num_taxis) {
+    for (int i = 0; i < num_taxis; ++i) {
+        int x = rand() % 10; // Random x-coordinate between 0 and 9
+        int y = rand() % 10; // Random y-coordinate between 0 and 9
+        fleet.emplace_back(i, x, y); // Initialize with random locations
+
+        // std::cout << "Taxi " << i <<  " spawned at (" << x << "," << y << ")" << std::endl;
+    }
+}
+
+/**
  * @brief Requests a taxi for a customer at the specified coordinates.
  * 
  * @param customer_x The x-coordinate of the customer's location.

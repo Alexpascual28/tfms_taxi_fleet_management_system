@@ -5,6 +5,9 @@
 class TaxiFleetManagement {
 public:
     TaxiFleetManagement(int num_taxis);
+    TaxiFleetManagement();
+
+    void createFleet(int num_taxis);
 
     int requestTaxi(int customer_x, int customer_y);
     void updateTaxiLocation(int taxi_id, int new_x, int new_y);
